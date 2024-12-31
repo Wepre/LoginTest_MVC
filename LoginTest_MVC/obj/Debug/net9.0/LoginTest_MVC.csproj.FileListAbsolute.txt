@@ -95,3 +95,4 @@ C:\Users\ASUS\RiderProjects\LoginTest_MVC\LoginTest_MVC\obj\Debug\net9.0\refint\
 C:\Users\ASUS\RiderProjects\LoginTest_MVC\LoginTest_MVC\obj\Debug\net9.0\LoginTest_MVC.pdb
 C:\Users\ASUS\RiderProjects\LoginTest_MVC\LoginTest_MVC\obj\Debug\net9.0\LoginTest_MVC.genruntimeconfig.cache
 C:\Users\ASUS\RiderProjects\LoginTest_MVC\LoginTest_MVC\obj\Debug\net9.0\ref\LoginTest_MVC.dll
+C:\Users\ASUS\RiderProjects\LoginTest_MVC\LoginTest_MVC\obj\Debug\net9.0\LoginTest_MVC.sourcelink.json

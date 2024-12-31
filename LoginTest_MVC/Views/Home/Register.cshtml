@@ -1,0 +1,44 @@
+@page
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>注册页面</title>
+</head>
+<body>
+@* <div class="card" style="width: 18rem;"> *@
+@* *@
+@*     <div class="card-body"> *@
+@*         <h5 class="card-title"></h5> *@
+@* *@
+@*     </div> *@
+@* </div> *@
+<form asp-action="Register" asp-controller="Home" method="post">
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">账号</label>
+        <input type="text" class="form-control" id="" name="Username" placeholder="请输入账号">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">密码</label>
+        <input type="password" class="form-control" id="" name="Password" placeholder="请输入密码">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">确认密码</label>
+        <input type="password" class="form-control" id="" name="Password2" placeholder="请输入密码">
+    </div>
+    @if (@ViewBag.Error != null)
+    {
+        <div class="alert alert-primary" role="alert">
+            两次密码不一致
+        </div>
+    }
+    <button type="submit" class="btn btn-primary">注册</button>
+</form>
+</body>
+</html>

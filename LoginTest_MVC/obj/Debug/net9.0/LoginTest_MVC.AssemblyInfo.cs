@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginTest_MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc13037e858cfcd3f31296b467cae8bc337cf5c3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a455203398bc05e776b91482d388b5d6c5487188")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginTest_MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginTest_MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

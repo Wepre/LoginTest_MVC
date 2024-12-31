@@ -11,12 +11,12 @@ public class HomeController : Controller
     private PersonViewModelRepository _personViewModelRepository;
     private IPersonRepository _iPersonRepository;
 
-    public HomeController(ILogger<HomeController> logger, IPersonRepository IPersonRepository)
+    public HomeController(ILogger<HomeController> logger,IPersonRepository PersonViewModelRepository)
     {
         _logger = logger;
-        _iPersonRepository = IPersonRepository;
+        // _iPersonRepository = IPersonRepository;
+        _personViewModelRepository = PersonViewModelRepository as PersonViewModelRepository;
     }
-
     public IActionResult Index()
     {
         return View();
@@ -50,6 +50,20 @@ public class HomeController : Controller
 
     public IActionResult Register()
     {
+        if (Request.Method == "POST")
+        {
+            var formCollection = Request.Form;
+            if (formCollection["Password"] != formCollection["Password2"])
+            {
+                Console.WriteLine("两次密码不一致");
+                ViewBag.Error = "两次密码不一致";
+                return View();
+            }
+
+            _personViewModelRepository.AddPersonViewModel(formCollection["Username"], formCollection["Password"]);
+            Console.WriteLine("注册成功");
+        }
+
         return View();
     }
 

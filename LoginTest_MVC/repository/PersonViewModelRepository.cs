@@ -1,4 +1,5 @@
 using LoginTest_MVC.Models;
+using Microsoft.Extensions.Primitives;
 
 namespace LoginTest_MVC.repository;
 
@@ -19,5 +20,17 @@ public class PersonViewModelRepository : IPersonRepository
     public PersonViewModel? GetPersonViewModel(string username)
     {
         return _personViewModels.FirstOrDefault(x => x.Username == username);
+    }
+
+
+
+    public void AddPersonViewModel(StringValues username, StringValues password)
+    {
+        _personViewModels.Add(new PersonViewModel
+        {
+            Username = username,
+            Password = password,
+        });
+        
     }
 }
