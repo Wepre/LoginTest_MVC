@@ -1,0 +1,23 @@
+@page
+@model LoginTest_MVC.Views.Home.StuList
+
+@{
+    // Layout =null;
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    @foreach (var item in ViewBag.Persons)
+    {
+        <div>学生姓名:@item.Username</div> <div>学生密码:@item.Password</div>
+    }
+</div>
+</body>
+</html>

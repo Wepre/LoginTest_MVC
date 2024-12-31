@@ -33,4 +33,9 @@ public class PersonViewModelRepository : IPersonRepository
         });
         
     }
+
+    public List<PersonViewModel> GetAllPersonViewModel()
+    {
+        return _personViewModels;
+    }
 }
