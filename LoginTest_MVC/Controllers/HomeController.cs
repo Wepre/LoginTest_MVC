@@ -7,6 +7,7 @@ namespace LoginTest_MVC.Controllers;
 
 public class HomeController : Controller
 {
+    //我无意间改动了这个代码
     // 定义一个ILogger接口的实例
     private readonly ILogger<HomeController> _logger;
     // 定义一个PersonViewModelRepository接口的实例
