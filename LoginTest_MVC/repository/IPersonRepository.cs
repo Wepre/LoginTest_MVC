@@ -6,7 +6,7 @@ namespace LoginTest_MVC.repository;
 public interface IPersonRepository
 {
     List<PersonViewModel> _personViewModels { get; set; }
-    //改动又来了一
+    //改动又来了一，fixup是什么意思？
     PersonViewModel GetPersonViewModel(string  username);
     void AddPersonViewModel(StringValues username, StringValues password);
     List<PersonViewModel> GetAllPersonViewModel();
