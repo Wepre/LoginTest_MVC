@@ -21,6 +21,7 @@ public class PersonViewModelRepository : IPersonRepository
     {
         return _personViewModels.FirstOrDefault(x => x.Username == username);
     }
+    // fixup是什么意思？fixup就是追加要提交的内容，可能上一个提交当中，是还不够完善的，可以多文件吧‘
 
     //改动了第二个的二二
 
