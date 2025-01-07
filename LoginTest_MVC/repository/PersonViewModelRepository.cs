@@ -9,10 +9,10 @@ public class PersonViewModelRepository : IPersonRepository
 
     public PersonViewModelRepository()
     {
-        PersonViewModel p1 = new PersonViewModel() { Username = "1", Password = "1" };
-        PersonViewModel p2 = new PersonViewModel() { Username = "2", Password = "2" };
-        PersonViewModel p3 = new PersonViewModel() { Username = "3", Password = "3" };
-        PersonViewModel p4 = new PersonViewModel() { Username = "4", Password = "4" };
+        PersonViewModel p1 = new PersonViewModel(username: "1", password: "1");
+        PersonViewModel p2 = new PersonViewModel(username: "2", password: "2");
+        PersonViewModel p3 = new PersonViewModel(username: "3", password: "3");
+        PersonViewModel p4 = new PersonViewModel(username: "4", password: "4");
         _personViewModels = new List<PersonViewModel?>() { p1, p2, p3, p4 };
     }
 
@@ -27,16 +27,17 @@ public class PersonViewModelRepository : IPersonRepository
 
     public void AddPersonViewModel(StringValues username, StringValues password)
     {
-        _personViewModels.Add(new PersonViewModel
-        {
-            Username = username,
-            Password = password,
-        });
+        _personViewModels.Add(new PersonViewModel(username: username, password: password));
         
     }
 
     public List<PersonViewModel> GetAllPersonViewModel()
     {
         return _personViewModels;
+    }
+
+    public PersonViewModel GetPersonViewModel(string username, string password)
+    {
+        return _personViewModels.Where(e => e.Password == password && e.Username == username).FirstOrDefault();
     }
 }

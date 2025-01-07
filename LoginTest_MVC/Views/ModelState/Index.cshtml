@@ -1,4 +1,5 @@
 @model PersonViewModel
+
 @{
     Layout = "_Layout";
 }
@@ -7,45 +8,30 @@
 
 <html>
 <head>
-    <title>登录页面</title>
+    <title>ModelState测试</title>
 </head>
 <body>
-
-
 <div class="card" style="width: 18rem;">
 
     <div class="card-body">
-
-
+        <h5 class="card-title"></h5>
     </div>
-
 </div>
+
 <form asp-action="Login" asp-controller="Home" method="post">
 
     <div class="mb-3">
         <label asp-for="Username" class="form-label">账号</label>
         <input asp-for="Username" type="text" class="form-control" placeholder="请输入账号">
-        <span asp-validation-for="Username" class="text-danger"></span>
+        <span asp-validation-for="Username"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Password" class="form-label">密码</label>
         <input asp-for="Password" type="password" class="form-control" placeholder="请输入密码">
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <span asp-validation-for="Password"></span>
     </div>
     <a asp-action="Register" asp-controller="Home">还没有账号？前去注册</a>
     <button type="submit" class="btn btn-primary">登录</button>
 </form>
-@if (!ViewData.ModelState.IsValid)
-{
-    <div class="alert alert-danger">
-        @foreach (var modelState in ViewData.ModelState.Values)
-        {
-            foreach (var error in modelState.Errors)
-            {
-                <span> @error.ErrorMessage</span>
-            }
-        }
-    </div>
-}
 </body>
 </html>

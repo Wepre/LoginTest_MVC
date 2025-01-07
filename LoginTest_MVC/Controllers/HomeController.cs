@@ -35,6 +35,7 @@ public class HomeController : Controller
 
 
     // 返回Login视图
+    [HttpGet]
     public IActionResult Login()
     {
         // 获取请求的方法
@@ -44,22 +45,35 @@ public class HomeController : Controller
         {
             // 这里就说明是表单里面传过来的数据
             var formCollection = Request.Form;
-            var Username = formCollection["Username"];
-            var Password = formCollection["Password"];
-            // 调用PersonViewModelRepository接口的GetPersonViewModel方法
-            PersonViewModel person = _personViewModelRepository.GetPersonViewModel(Username);
-            Console.WriteLine(person);
-            if (person == null)
-            {
-                Console.WriteLine("登录失败");
-            }
-            else
-            {
-                return Redirect("StuList");
-            }
+            
         }
         else
         {
+        }
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Login(PersonViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+        var Username = model.Username;
+        var Password = model.Password;
+        // 调用PersonViewModelRepository接口的GetPersonViewModel方法
+        PersonViewModel person = _personViewModelRepository.GetPersonViewModel(Username,Password);
+        Console.WriteLine(person);
+        if (person == null)
+        {
+            Console.WriteLine("登录失败");
+            ModelState.AddModelError("", "用户名或密码错误");
+        }
+        else
+        {
+            return Redirect("StuList");
         }
 
         return View();
