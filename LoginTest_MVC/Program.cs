@@ -1,7 +1,12 @@
 using LoginTest_MVC.Controllers;
 using LoginTest_MVC.repository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using LoginTest_MVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<LoginTest_MVCContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LoginTest_MVCContext") ?? throw new InvalidOperationException("Connection string 'LoginTest_MVCContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
